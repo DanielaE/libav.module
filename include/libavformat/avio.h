@@ -497,7 +497,7 @@ int64_t avio_skip(AVIOContext *s, int64_t offset);
  * ftell() equivalent for AVIOContext.
  * @return position or AVERROR.
  */
-static av_always_inline int64_t avio_tell(AVIOContext *s)
+av_always_inline int64_t avio_tell(AVIOContext *s)
 {
     return avio_seek(s, 0, SEEK_CUR);
 }
