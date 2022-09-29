@@ -37,7 +37,7 @@ union av_intfloat64 {
 /**
  * Reinterpret a 32-bit integer as a float.
  */
-static av_always_inline float av_int2float(uint32_t i)
+av_always_inline float av_int2float(uint32_t i)
 {
     union av_intfloat32 v;
     v.i = i;
@@ -47,7 +47,7 @@ static av_always_inline float av_int2float(uint32_t i)
 /**
  * Reinterpret a float as a 32-bit integer.
  */
-static av_always_inline uint32_t av_float2int(float f)
+av_always_inline uint32_t av_float2int(float f)
 {
     union av_intfloat32 v;
     v.f = f;
@@ -57,7 +57,7 @@ static av_always_inline uint32_t av_float2int(float f)
 /**
  * Reinterpret a 64-bit integer as a double.
  */
-static av_always_inline double av_int2double(uint64_t i)
+av_always_inline double av_int2double(uint64_t i)
 {
     union av_intfloat64 v;
     v.i = i;
@@ -67,7 +67,7 @@ static av_always_inline double av_int2double(uint64_t i)
 /**
  * Reinterpret a double as a 64-bit integer.
  */
-static av_always_inline uint64_t av_double2int(double f)
+av_always_inline uint64_t av_double2int(double f)
 {
     union av_intfloat64 v;
     v.f = f;
