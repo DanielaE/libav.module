@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\lib\avcodec.lib" />
+    <Library Include="..\lib\avfilter.lib" />
+    <Library Include="..\lib\avformat.lib" />
+    <Library Include="..\lib\avutil.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="libav.ixx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\libavcodec\avcodec.h" />
+    <ClInclude Include="..\include\libavcodec\version.h" />
+    <ClInclude Include="..\include\libavfilter\avfilter.h" />
+    <ClInclude Include="..\include\libavfilter\buffersink.h" />
+    <ClInclude Include="..\include\libavfilter\buffersrc.h" />
+    <ClInclude Include="..\include\libavfilter\version.h" />
+    <ClInclude Include="..\include\libavformat\avformat.h" />
+    <ClInclude Include="..\include\libavformat\avio.h" />
+    <ClInclude Include="..\include\libavformat\version.h" />
+    <ClInclude Include="..\include\libavutil\avutil.h" />
+    <ClInclude Include="..\include\libavutil\macros.h" />
+    <ClInclude Include="..\include\libavutil\version.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1569001E-8080-4A44-93FF-C544C13D45F6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>libav</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseDebugLibraries Condition="'$(Configuration)'=='Debug'">true</UseDebugLibraries>
+    <WholeProgramOptimization Condition="'$(Configuration)'=='Release'">true</WholeProgramOptimization>
+    <PlatformToolset Condition="'$(DefaultPlatformToolset)' != ''">$(DefaultPlatformToolset)</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup>
+    <OutDir>$(BmiCacheDir)</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ModuleOutputFile>$(BmiCacheDir)$(ProjectName).ifc</ModuleOutputFile>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\;$(ProjectDir)..\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>5244</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>
