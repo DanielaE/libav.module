@@ -30,7 +30,7 @@ module;
 export module libav;
 
 #if _MSC_VER
-    pragma comment(lib, "libav.lib")
+#   pragma comment(lib, "libav.lib")
 #endif
 
 #ifndef __clang__
