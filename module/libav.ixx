@@ -18,6 +18,7 @@ module;
 #include <time.h>
 
 #ifdef __clang__
+extern "C" {
 #include "libavcodec/avcodec.h"
 #include "libavfilter/avfilter.h"
 #include "libavfilter/buffersink.h"
@@ -25,6 +26,7 @@ module;
 #include "libavformat/avformat.h"
 #include "libavutil/avutil.h"
 #include "libavutil/opt.h"
+}
 #endif
 
 export module libav;
