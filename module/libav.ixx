@@ -1,8 +1,7 @@
 module;
 
 #ifdef __MINGW64__
-#include <cwchar>
-#include <compare>
+#  include <cwchar> // work around ODR problems with the C standard library
 #endif
 
 #include <errno.h>
