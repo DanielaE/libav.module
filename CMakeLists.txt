@@ -56,5 +56,5 @@ if (MSVC)
 
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 # I do mean C++20
-  target_compile_options(libav PUBLIC -fsized-deallocation -faligned-allocation -fchar8_t)
+  target_compile_options(libav PUBLIC -fsized-deallocation -faligned-allocation)
 endif()
