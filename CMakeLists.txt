@@ -45,7 +45,9 @@ target_sources(libav
       FILES ${libav-sources}
 )
 target_compile_features(libav PUBLIC cxx_std_20)
-target_include_directories(libav BEFORE PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+if (MSVC)
+  target_include_directories(libav BEFORE PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+endif()
 target_link_libraries(libav INTERFACE ${ffmpeg-codec} ${ffmpeg-filter} ${ffmpeg-format} ${ffmpeg-util})
 
 if (MSVC)
